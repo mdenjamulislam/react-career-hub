@@ -1,8 +1,7 @@
-import { FaLocationDot, FaCircleDollarToSlot } from 'react-icons/fa6';
-import { Link } from 'react-router-dom';
-const Job = ({ job }) => {
-    const { id, job_title, logo, company_name, remote_or_onsite, location, job_type, salary } = job;
 
+import { FaLocationDot, FaCircleDollarToSlot } from 'react-icons/fa6';
+const AppliedJob = ({ job }) => {
+    const { logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job;
     return (
         <div className="rounded-lg border border-gray-300 p-4 md:p-6 lg:p-10">
             <img src={logo} alt={company_name} className="h-10 w-auto" />
@@ -22,12 +21,8 @@ const Job = ({ job }) => {
                     <span className="text-lg font-semibold text-dark-2 md:text-xl">Sallery {salary}</span>
                 </div>
             </div>
-
-            <Link to={`/job/${id}`}>
-                <button className="btn bg-linear text-white">View Details</button>
-            </Link>
         </div>
     );
 };
 
-export default Job;
+export default AppliedJob;
